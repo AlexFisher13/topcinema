@@ -1,10 +1,8 @@
 package com.topcinema.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Table
 @Entity
 public class Movie {
 
@@ -14,6 +12,14 @@ public class Movie {
 
     private String title;
     private String rating;
+
+    public Movie(String title, String rating) {
+        this.title = title;
+        this.rating = rating;
+    }
+
+    public Movie() {
+    }
 
     public Integer getId() {
         return id;

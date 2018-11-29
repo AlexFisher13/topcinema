@@ -5,7 +5,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8 /">
 </head>
 <body>
-    <div>Список сообщений</div>
+    <div>
+        <form method="post">
+            <input type="text" name="title" placeholder="Введите название фильма"></input>
+            <input type="text" name="rating" placeholder="Рейтинг"></input>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <div>Список фильмов</div>
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <button type="submit">Найти</button>
+    </form>
     {{#movies}}
         <div>
             <b>{{id}}</b>
