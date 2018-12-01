@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -16,14 +15,19 @@ public class GreetingController {
     @Autowired
     private MovieRepo movieRepo;
 
-    @GetMapping
+    @GetMapping("/")
     public String greeting(Map<String, Object> model) {
+        return "home";
+    }
+
+    @GetMapping("/main")
+    public String main(Map<String, Object> model) {
         Iterable<Movie> movies = movieRepo.findAll();
         model.put("movies", movies);
         return "main";
     }
 
-    @PostMapping
+    @PostMapping("/main")
     public String add(@RequestParam String title, @RequestParam String rating, Map<String, Object> model) {
         Movie movie = new Movie(title, rating);
         movieRepo.save(movie);

@@ -6,9 +6,16 @@
 </head>
 <body>
     <div>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </div>
+    <div>
         <form method="post">
-            <input type="text" name="title" placeholder="Введите название фильма"></input>
-            <input type="text" name="rating" placeholder="Рейтинг"></input>
+            <input type="text" name="title" placeholder="Введите название фильма"/>
+            <input type="text" name="rating" placeholder="Рейтинг"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Добавить</button>
         </form>
     </div>
@@ -19,9 +26,9 @@
     </form>
     {{#movies}}
         <div>
-            <b>{{id}}</b>
+            <i>{{id}}</i>
             <span>{{title}}</span>
-            <i>{{rating}}</i>
+            <b>{{rating}}</b>
         </div>
     {{/movies}}
 </body>
