@@ -1,4 +1,4 @@
-package com.topcinema;
+package com.topcinema.controller;
 
 import com.topcinema.domain.Movie;
 import com.topcinema.repos.MovieRepo;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
     @Autowired
     private MovieRepo movieRepo;
 
